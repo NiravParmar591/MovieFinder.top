@@ -193,11 +193,29 @@ async function ShowPopup(show) {
     }; 
 }
 
-async function getYouTubeLink(url) {
+async function getYouTubeLink(url) {    
     let maindata = await fetch(url);
     let data = await maindata.json();
+    let trailer;
 
-    let trailer = data.results.find(TR => TR.site === "YouTube" && TR.type === "Trailer" && TR.official === true && (TR.name.toLowerCase().includes("official trailer") || TR.name.toLowerCase().includes("series trailer") || TR.name.toLowerCase().includes("launch trailer")));
+    if(data.results.length == 1){
+        trailer = data.results[0];
+    }
+    else{
+        trailer = data.results.findLast(TR => 
+            TR.site === "YouTube" && 
+            TR.type === "Trailer" && 
+            TR.official === true && 
+            (   
+                TR.name.toLowerCase().includes("official trailer") || 
+                TR.name.toLowerCase().includes("series trailer") || 
+                TR.name.toLowerCase().includes("launch trailer") || 
+                TR.name.toLowerCase().includes("success trailer") ||
+                TR.name.toLowerCase().includes("trailer")  
+            )
+        );
+    }
+
     return trailer ? trailer.key : null;
 }
 
@@ -308,4 +326,5 @@ Add.addEventListener("click", () => {
 heading.addEventListener("click", () => {
     console.log("name is clicked");
     location.reload();
+
 });
