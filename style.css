@@ -58,7 +58,6 @@ body::-webkit-scrollbar{
 
 .main .navigation{
     height: 4rem;
-    min-height: max-content;
     width: 100%;
     background-color: var(--gary-main);
     display: flex;
@@ -123,6 +122,7 @@ body::-webkit-scrollbar{
 
 @media screen AND (max-width: 768px){
     .main .navigation{
+        height: max-content;
         flex-direction: column;
         gap: 1rem;
         padding: 1rem calc(var(--padding) / 2);
@@ -377,6 +377,7 @@ body::-webkit-scrollbar{
     font-size: max(1.2rem,1vw);
 
 }
+
 
 
 
