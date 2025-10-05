@@ -57,8 +57,8 @@ body::-webkit-scrollbar{
 }
 
 .main .navigation{
-    height: max-content;
-    min-height: 4rem;
+    height: 4rem;
+    min-height: max-content;
     width: 100%;
     background-color: var(--gary-main);
     display: flex;
@@ -377,6 +377,7 @@ body::-webkit-scrollbar{
     font-size: max(1.2rem,1vw);
 
 }
+
 
 
 
