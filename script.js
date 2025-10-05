@@ -102,6 +102,7 @@ function displayShow(shows) {
 
             showinfo.addEventListener("click", () => {
                 ShowPopup(show);
+                document.body.style.overflow = 'hidden';
             });
 
             WatchListEvent(checkBox, show);
@@ -181,7 +182,8 @@ async function ShowPopup(show) {
             }
         
             document.querySelector(".backBtn").addEventListener("click", () => {
-                console.log("back btn is clicked");
+                //console.log("back btn is clicked");
+                document.body.style.overflow = 'auto';
                 setTimeout(() => popElement.remove(),delay/6);
                 popupOpen = false;
             });
@@ -325,4 +327,5 @@ Add.addEventListener("click", () => {
 heading.addEventListener("click", () => {
     console.log("name is clicked");
     location.reload();
+
 });
