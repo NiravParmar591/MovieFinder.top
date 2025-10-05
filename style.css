@@ -273,6 +273,7 @@ body::-webkit-scrollbar{
 .ShowPopup{
     --max-width: 768px;
     height: 100%;
+    max-height: 150vh;
     width: 100%;
     position: fixed;
     top: 0;
@@ -376,4 +377,5 @@ body::-webkit-scrollbar{
     font-size: max(1.2rem,1vw);
 
 }
+
 
